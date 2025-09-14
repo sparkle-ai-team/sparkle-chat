@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server"
-import { getGeminiClient } from "@/lib/gemini"
+import { getGemini
 
 export const runtime = "edge"
 

@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server"
-import { getGemini
+import { getGeminiClient } from "../../../lib/gemini"  // ⬅️ three dots: ../../../
 
 export const runtime = "edge"
 
@@ -35,3 +35,4 @@ export async function POST(req: NextRequest) {
     return new Response(`Server error: ${e.message}`, { status: 500 })
   }
 }
+

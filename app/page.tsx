@@ -1,9 +1,7 @@
-// page.tsx (top of file)
-"use client";
-import { useState, useEffect } from "react";   // <-- this line is missing
-import ChatUI from "../components/ChatUI";
-import ThemeToggle from "../components/ThemeToggle";
-
+"use client"
+import { useEffect, useState } from "react"
+import ChatUI from "../components/ChatUI"
+import ThemeToggle from "../components/ThemeToggle"
 
 export default function Page() {
   const [theme, setTheme] = useState<"light" | "dark">(

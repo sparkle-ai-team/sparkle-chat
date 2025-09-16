@@ -5,3 +5,4 @@ export function getGeminiClient() {
   return new GoogleGenerativeAI(key)
 }
 
+

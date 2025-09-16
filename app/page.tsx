@@ -1,5 +1,4 @@
 "use client"
-import { getGeminiClient } from "../../lib/gemini"
 import ChatUI from "../components/ChatUI"
 import ThemeToggle from "../components/ThemeToggle"
 

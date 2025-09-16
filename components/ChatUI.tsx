@@ -40,8 +40,16 @@ export default function ChatUI() {
     })
 
     if (!res.ok || !res.body) {
-      add({ id: crypto.randomUUID(), role: "assistant", text: `⚠️ Error: ${res.status} ${res.statusText}`, time: now() })
-      return
+  const msg = await res.text().catch(() => `${res.status} ${res.statusText}`)
+  add({
+    id: crypto.randomUUID(),
+    role: "assistant",
+    text: `⚠️ Error: ${msg}`,
+    time: now()
+  })
+  return
+}
+
     }
 
     // stream

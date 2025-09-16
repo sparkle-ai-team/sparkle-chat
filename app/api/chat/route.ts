@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server"
 import { getGeminiClient } from "../../../lib/gemini"  // from app/api/chat to lib = ../../../
 
-export const runtime = "edge"
+export const runtime = "nodejs"
 
 export async function POST(req: NextRequest) {
   try {

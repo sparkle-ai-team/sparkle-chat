@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server"
-import { getGeminiClient } from "../../lib/gemini"  // ⬅️ three dots: ../../../
+import { getGeminiClient } from "../../../lib/gemini"  // from app/api/chat to lib = ../../../
 
 export const runtime = "edge"
 
@@ -14,7 +14,10 @@ export async function POST(req: NextRequest) {
 
     const parts = [
       { role: "user", parts: [{ text: `SYSTEM: ${systemPrompt || "You are a helpful assistant."}` }] },
-      ...history.map((m: any) => ({ role: m.role === "assistant" ? "model" : m.role, parts: [{ text: m.text }] })),
+      ...history.map((m: any) => ({
+        role: m.role === "assistant" ? "model" : m.role,
+        parts: [{ text: m.text }]
+      })),
       { role: "user", parts: [{ text: input }] }
     ] as any
 
@@ -35,4 +38,3 @@ export async function POST(req: NextRequest) {
     return new Response(`Server error: ${e.message}`, { status: 500 })
   }
 }
-

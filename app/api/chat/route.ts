@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server"
-import { getGeminiClient } from "../../../lib/gemini"  // ⬅️ three dots: ../../../
+import { getGeminiClient } from "../../lib/gemini"  // ⬅️ three dots: ../../../
 
 export const runtime = "edge"
 

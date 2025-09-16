@@ -20,6 +20,7 @@ export default function ChatUI() {
   const now = () => new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
 
   async function send(input: string) {
+    // Slash commands
     if (input.startsWith("/")) {
       const cmd = input.slice(1).trim()
       if (cmd === "clear") { setMessages([]); return }
@@ -43,6 +44,7 @@ export default function ChatUI() {
       return
     }
 
+    // stream
     const reader = res.body.getReader()
     const decoder = new TextDecoder()
     let acc = ""

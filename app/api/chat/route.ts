@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     if (input.length > 8000) return new Response("Input too long", { status: 413 })
 
     const genAI = getGeminiClient()
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" })
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" })
 
     const parts = [
       { role: "user", parts: [{ text: `SYSTEM: ${systemPrompt || "You are a helpful assistant."}` }] },
